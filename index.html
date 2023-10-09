@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Separar Nome e Sobrenome</title>
+</head>
+<body>
+    <div style="text-align: center;">
+        <h4>Nome Completo:</h4>
+        <input type="text" id="nomeCompleto" placeholder="Digite o nome completo">
+        <button onclick="separarNomeSobrenome()">>></button>
+    </div>
+    <div style="text-align: center; margin-top: 20px;">
+        <h4>Nome:</h4>
+        <input type="text" id="nome" placeholder="Nome">
+        <h4>Sobrenome:</h4>
+        <input type="text" id="sobrenome" placeholder="Sobrenome">
+    </div>
+
+    <script>
+        function separarNomeSobrenome() {
+            // Obter o valor da caixa de texto do nome completo
+            var nomeCompleto = document.getElementById("nomeCompleto").value;
+
+            // Dividir o nome completo em nome e sobrenome
+            var partesDoNome = nomeCompleto.split(" ");
+
+            // Verificar se existem pelo menos duas partes (nome e sobrenome)
+            if (partesDoNome.length >= 2) {
+                // Definir o valor dos campos de nome e sobrenome
+                document.getElementById("nome").value = partesDoNome[0];
+                document.getElementById("sobrenome").value = partesDoNome.slice(1).join(" ");
+            } else {
+                alert("Por favor, digite um nome completo válido.");
+            }
+        }
+    </script>
+</body>
+</html>
+
+
